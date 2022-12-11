@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RESTWithDonetCore_Calculator.Services;
+using RESTWithDonetCore_Calculator.Services.Implemetations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,8 @@ namespace RESTWithDonetCore {
         public void ConfigureServices (IServiceCollection services) {
 
             services.AddControllers();
+            //Dependency injection
+            services.AddScoped<IPersonService, PersonServiceImplemetation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
